@@ -1,0 +1,7 @@
+# Kalodata demo bundle patch: mounts the model-facing `kalodata` tool on top of
+# the dsh-base layer. The tool injects only `tools` (provided by base); its
+# secret key resolves at call time from `KALODATA_SECRET_KEY` or a config
+# override in a later patch layer.
+- insert:
+    - id: kalodata
+      name: '@deepseek-ai/dsh-kalodata-demo'
